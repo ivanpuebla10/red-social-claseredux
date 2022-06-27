@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
 import { notification } from "antd";
 import { Avatar } from "antd";
+import { useState } from "react";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -16,6 +17,14 @@ const Header = () => {
       navigate("/login");
     }, 2000);
   };
+  const [text, setText] = useState("");
+  const handleChange = (e) => {
+    setText(e.target.value);
+    if (e.key === "Enter") {
+      navigate("/search/"+ text);
+    }
+  };
+
   return (
     <nav>
       <span>
@@ -23,6 +32,7 @@ const Header = () => {
         <Link to="/">Header</Link>
       </span>
       <div>
+      <input onKeyUp={handleChange} placeholder="search post" name="text" />
         <span>
           <Link to="/">Home</Link>
         </span>
