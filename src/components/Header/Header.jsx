@@ -7,7 +7,7 @@ import { Avatar } from "antd";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);//para traerme la información del estado
   const onLogout = (e) => {
     e.preventDefault();
     dispatch(logout());
