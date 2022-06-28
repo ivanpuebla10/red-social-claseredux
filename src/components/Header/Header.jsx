@@ -48,6 +48,7 @@ const Header = () => {
                 <Avatar>{user.user.name[0]}</Avatar>
               </Link>
             </span>
+            {user.user.role === 'admin' ? <span><Link to="/admin">Admin</Link></span>:''}
           </>
         ) : (
           <>
