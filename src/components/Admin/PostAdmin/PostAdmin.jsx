@@ -11,7 +11,7 @@ const PostAdmin = () => {
       <div className="post" key={post.id} >
           <p>{post.title}</p>
           <button onClick={() => dispatch(deletePost(post.id))}>X</button>
-      </div>
+      </div> 
     );
   });
   return <div>{post}</div>;
